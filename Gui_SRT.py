@@ -4,11 +4,12 @@ import pysrt
 import os
 from googletrans import Translator
 import threading
+import webbrowser
 
 class SRTTranslatorApp:
     def __init__(self, master):
         self.master = master
-        master.title("SRT Translator")
+        master.title("Subtitle Translator Pr-M")
 
         # Set the grid layout
         self.master.grid_columnconfigure(0, weight=1)
@@ -48,6 +49,11 @@ class SRTTranslatorApp:
         # Progress Label
         self.progress_label = tk.Label(master, text="Lines Translated: 0 | Remaining: 0")
         self.progress_label.grid(row=6, column=0, sticky='ew', padx=10)
+
+        # Developer's GitHub link
+        self.github_link = tk.Label(master, text="To get the latest version", fg="blue", cursor="hand2")
+        self.github_link.grid(row=7, column=0, sticky='ew', padx=10, pady=(10, 5))
+        self.github_link.bind("<Button-1>", lambda e: self.open_github())
 
     def start_translation_thread(self):
         threading.Thread(target=self.translate_srt).start()
@@ -97,6 +103,9 @@ class SRTTranslatorApp:
             subs.save(output_path, encoding='utf-8')
 
         messagebox.showinfo("Translation Complete", f"All translations completed and saved to '{output_dir}'.")
+
+    def open_github(self):
+        webbrowser.open("https://github.com/Scary-technologies/srt_translate_to_persian")
 
 root = tk.Tk()
 app = SRTTranslatorApp(root)
