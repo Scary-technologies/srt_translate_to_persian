@@ -1,25 +1,66 @@
 # SRT Translator App
 
-This is a simple Python application built with `tkinter` for translating `.srt` subtitle files. The app allows users to select one or more `.srt` files and translate them into the desired language.
+این یک برنامه ساده پایتون است که با استفاده از `tkinter` برای ترجمه فایل‌های زیرنویس `.srt` ساخته شده است. این برنامه به کاربران اجازه می‌دهد تا یک یا چند فایل `.srt` را انتخاب کرده و آنها را به زبان مورد نظر ترجمه کنند.
 
-## Features
+## ویژگی‌ها
 
-- **Translate multiple SRT files:** The app supports translating multiple `.srt` files at once.
-- **Language Selection:** Users can select the source and destination languages from the UI.
-- **Real-time Progress Tracking:** The app displays real-time progress with a progress bar and updates the number of lines translated.
-- **Log Output:** The app provides real-time logs of the ongoing translation.
-- **Save Translations:** Translated files are saved in a separate folder called `translated_srt`.
+- **ترجمه چندین فایل SRT:** برنامه امکان ترجمه چندین فایل `.srt` را به صورت همزمان فراهم می‌کند.
+- **انتخاب زبان:** کاربران می‌توانند زبان مبدا و مقصد را از رابط کاربری انتخاب کنند.
+- **نمایش پیشرفت به‌صورت لحظه‌ای:** برنامه به‌صورت لحظه‌ای پیشرفت ترجمه را با یک نوار پیشرفت و تعداد خطوط ترجمه‌شده به‌روزرسانی می‌کند.
+- **نمایش لاگ ترجمه:** برنامه لاگ لحظه‌ای از فرآیند ترجمه را نمایش می‌دهد.
+- **ذخیره ترجمه‌ها:** فایل‌های ترجمه‌شده در پوشه‌ای با نام `translated_srt` ذخیره می‌شوند.
 
-## Prerequisites
+## پیش‌نیازها
 
-Make sure you have the following dependencies installed:
+اطمینان حاصل کنید که وابستگی‌های زیر نصب شده‌اند:
 
 - Python 3.x
-- `pysrt` library
-- `googletrans` library (unofficial)
-- `tkinter` (comes pre-installed with most Python distributions)
+- کتابخانه `pysrt`
+- کتابخانه `googletrans` (نسخه غیررسمی)
+- `tkinter` (به صورت پیش‌فرض در بیشتر توزیع‌های پایتون نصب شده است)
 
-You can install the required Python libraries with the following command:
+می‌توانید کتابخانه‌های مورد نیاز را با دستور زیر نصب کنید:
 
 ```bash
 pip install pysrt googletrans==4.0.0-rc1
+```
+
+> **نکته:** ممکن است کتابخانه `googletrans` به دلیل محدودیت‌های API با مشکلاتی روبرو شود. برای پایداری بیشتر، می‌توانید از API رسمی Google Cloud Translation استفاده کنید.
+
+## نحوه اجرای برنامه
+
+1. این مخزن را کلون کنید یا فایل‌ها را دانلود کنید.
+2. به دایرکتوری پروژه بروید.
+3. برنامه را با دستور زیر اجرا کنید:
+
+```bash
+python main.py
+```
+
+## نحوه استفاده
+
+1. **انتخاب زبان:** زبان مبدا و مقصد را از منوهای کشویی انتخاب کنید.
+2. **انتخاب فایل‌های SRT:** روی دکمه "Translate SRT(s)" کلیک کرده و یک یا چند فایل `.srt` را انتخاب کنید.
+3. **مانیتورینگ پیشرفت:** پیشرفت ترجمه به‌صورت لحظه‌ای در نوار پیشرفت و لاگ‌های برنامه نمایش داده می‌شود.
+4. **مشاهده ترجمه‌ها:** پس از اتمام ترجمه، فایل‌های ترجمه‌شده در پوشه‌ای با نام `translated_srt` ذخیره خواهند شد.
+
+## زبان‌های پشتیبانی شده
+
+شما می‌توانید از میان زبان‌های زیر انتخاب کنید:
+
+- انگلیسی (`en`)
+- فارسی (`fa`)
+- اسپانیایی (`es`)
+- آلمانی (`de`)
+- فرانسوی (`fr`)
+- چینی (ساده‌شده) (`zh-cn`)
+- عربی (`ar`)
+
+## مشارکت
+
+اگر پیشنهادی دارید یا باگ‌ها را پیدا کردید، خوشحال می‌شویم که یک issue ایجاد کنید یا pull request ارسال کنید.
+
+## لایسنس
+
+این پروژه تحت لایسنس MIT منتشر شده است.
+
