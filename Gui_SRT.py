@@ -90,7 +90,7 @@ class SRTTranslatorApp:
 
                 # Update progress
                 remaining_lines = total_lines - translated_lines
-                self.progress["value"] = ranslated_lines
+                self.progress["value"] = translated_lines
                 self.progress_label.config(text=f"Lines Translated: {translated_lines} | Remaining: {remaining_lines}")
                 self.master.update_idletasks()
 
